@@ -38,18 +38,28 @@ var sr = `<div id="mainDiv">
 
 <div id="inputTextAreaDiv">
 <textarea id="inputTextArea" class="UIInput" rows="8">
-Paste the text you want to read here, set the words per minute to a comfortable reading rate, then click Start ( &#x25ba; ) to begin.
-
-While reading, Spacebar pauses and resumes, Esc stops, Up Arrow increases the reading speed, Down Arrow slows the reading speed, Left Arrow will go back a second or so toward the beginning of a sentence, and Right Arrow will go ahead a few seconds toward the beginning of a paragraph.
+Text
 </textarea>
 <br><br>
 
 <div id="speedAndCheckBoxesDiv">
-<span class="UIText">Speed <input type="text" id="speedInputElement" class="UIInput" size="5" value="250">
-<label><input type="checkbox" id="hideTextArea" checked>Hide text box when reading</label></span>
+<span class="UIText">Speed <input type="text" id="speedInputElement" class="UIInput" size="5" value="250"></span>
+<span style="display:none;">
 <span id="alsoTextSpan" class="UIDisabledText"><label><input type="checkbox" id="hideButtons" disabled>Also hide buttons</label></span>
 <span class="UIText"><label><input type="checkbox" id="multiWordCheckBox">Display multiple words</label></span><br>
+<span class="UIText"><label><input type="checkbox" id="hideTextArea" checked>Hide text box when reading</label></span><br>
 <span class="UIText">Average words per minute: <span id="wpmDisplay"></span></span>
+</span>
+<div style="margin-top:10px;"><button style="background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;" onclick="SpeedReader.init();">Init</button></div>
 </div>
 </div>
 </div>`
@@ -60,5 +70,3 @@ var div = document.createElement("div")
 div.style = 'width: 100%; height: 100vh; background-color: white; display: flex; z-index: 50; overflow: scroll;position: fixed;top: 0;'
 div.innerHTML = sr
 document.body.prepend(div)
-
-// SpeedReader.init();
