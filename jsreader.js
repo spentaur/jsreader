@@ -1204,4 +1204,4 @@ var SpeedReader = (function()
 
 // Initialize the speed reader.
 
-window.onload = SpeedReader.init;
+SpeedReader.init();
