@@ -37,29 +37,20 @@ var sr = `<div id="mainDiv">
 <br><br>
 
 <div id="inputTextAreaDiv">
-<textarea id="inputTextArea" class="UIInput" rows="8">
+<textarea id="inputTextArea" class="UIInput" rows="8" >
 Text
 </textarea>
 <br><br>
 
 <div id="speedAndCheckBoxesDiv">
 <span class="UIText">Speed <input type="text" id="speedInputElement" class="UIInput" size="5" value="250"></span>
-<span style="display:none;">
+<span style="">
 <span id="alsoTextSpan" class="UIDisabledText"><label><input type="checkbox" id="hideButtons" disabled>Also hide buttons</label></span>
 <span class="UIText"><label><input type="checkbox" id="multiWordCheckBox">Display multiple words</label></span><br>
 <span class="UIText"><label><input type="checkbox" id="hideTextArea" checked>Hide text box when reading</label></span><br>
 <span class="UIText">Average words per minute: <span id="wpmDisplay"></span></span>
 </span>
-<div style="margin-top:10px;"><button style="background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;" onclick="SpeedReader.init();">Init</button></div>
+<div style="display:none;"><button id="init" onclick="SpeedReader.init();">Init</button></div>
 </div>
 </div>
 </div>`
@@ -67,6 +58,8 @@ Text
 document.body.style = "overflow:hidden;"
 
 var div = document.createElement("div")
-div.style = 'width: 100%; height: 100vh; background-color: white; display: flex; z-index: 50; overflow: scroll;position: fixed;top: 0;'
+div.style = 'width: 100%; height: 100vh; background-color: white; display: flex; z-index: 10000; overflow: scroll;position: fixed;top: 0;'
 div.innerHTML = sr
 document.body.prepend(div)
+
+setTimeout(() => {document.getElementById('init').click()}, 1000);
