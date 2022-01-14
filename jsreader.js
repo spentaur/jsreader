@@ -1200,8 +1200,3 @@ var SpeedReader = (function()
 
     };
 })();
-
-
-// Initialize the speed reader.
-
-SpeedReader.init();
