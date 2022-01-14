@@ -48,14 +48,17 @@ While reading, Spacebar pauses and resumes, Esc stops, Up Arrow increases the re
 <span class="UIText">Speed <input type="text" id="speedInputElement" class="UIInput" size="5" value="250">
 <label><input type="checkbox" id="hideTextArea" checked>Hide text box when reading</label></span>
 <span id="alsoTextSpan" class="UIDisabledText"><label><input type="checkbox" id="hideButtons" disabled>Also hide buttons</label></span>
-<span class="UIText"><label><input type="checkbox" id="multiWordCheckBox" checked>Display multiple words</label></span><br>
+<span class="UIText"><label><input type="checkbox" id="multiWordCheckBox">Display multiple words</label></span><br>
 <span class="UIText">Average words per minute: <span id="wpmDisplay"></span></span>
 </div>
 </div>
 </div>`
 
+document.body.style = "overflow:hidden;"
+
 var div = document.createElement("div")
+div.style = 'width: 100%; height: 100vh; background-color: white; display: flex; z-index: 50; overflow: scroll;position: fixed;top: 0;'
 div.innerHTML = sr
 document.body.prepend(div)
 
-SpeedReader.init();
+// SpeedReader.init();
