@@ -1,3 +1,11 @@
+document.querySelector('meta[name="viewport"]').remove()
+
+var element = document.createElement("meta")
+element.setAttribute("name", "viewport");
+element.setAttribute("content", "width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no");
+document.head.prepend(element);
+
+
 var element = document.createElement("script");
 element.setAttribute("src", "https://spentaur.github.io/jsreader/jsreader.js");
 document.head.prepend(element);
